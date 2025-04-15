@@ -1,0 +1,29 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .timeline-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #76c7c0;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .timeline-year {
+    font-weight: bold;
+    color: #76c7c0;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .timeline-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  
+
