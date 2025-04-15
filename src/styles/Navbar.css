@@ -5,7 +5,7 @@
   padding: 16px 10%;
   position: sticky;
   top: 0;
-  background: rgba(18, 18, 18, 0.95); /* true black glass */
+  background: rgba(18, 18, 18, 0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 1000;
@@ -16,7 +16,7 @@
 /* Logo */
 .navbar-logo a {
   color: #56918c;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 1px;
@@ -45,7 +45,7 @@
   transition: color 0.3s ease;
 }
 
-/* Hover underline effect */
+/* Hover underline */
 .navbar-links li a::after {
   content: "";
   position: absolute;
@@ -65,7 +65,7 @@
   width: 100%;
 }
 
-/* Active link style */
+/* Active link */
 .navbar-links li.active a {
   color: #56918c;
 }
@@ -74,7 +74,7 @@
   width: 100%;
 }
 
-
+/* Terminal Button */
 .terminal-button {
   background-color: #359aff;
   color: #000000;
@@ -89,4 +89,54 @@
 
 .terminal-button:hover {
   background-color: #5bbcff;
+}
+
+/* ======================= */
+/* 📱 Mobile Responsiveness */
+/* ======================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 6%;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .navbar-links li a {
+    font-size: 1rem;
+    padding-left: 4px;
+  }
+
+  .terminal-button {
+    width: 100%;
+    margin: 12px 0 0 0;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/* XS Screens */
+@media (max-width: 420px) {
+  .navbar-logo a {
+    font-size: 1.4rem;
+  }
+
+  .terminal-button {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-links li a {
+    font-size: 0.95rem;
+  }
 }
