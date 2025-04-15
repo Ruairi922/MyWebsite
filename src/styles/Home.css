@@ -2,11 +2,13 @@
   background: linear-gradient(135deg, #171618, #39313c, #359aff);
   color: #000000;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
+/* Layout Containers */
 .home-hero,
 .about-section {
-  padding: 6% 10%;
+  padding: 6% 5%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -17,38 +19,41 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .home-title {
-  margin-top: -25rem;
-  font-size: 3.5rem;
+  margin-top: -20rem;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .home-subtitle {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 4vw, 2rem);
   font-weight: 400;
   color: #3c605d;
   margin-bottom: 1rem;
 }
 
 .home-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 600px;
   line-height: 1.6;
-  margin-bottom: 2rem;
-  color:#ffffff;
+  margin: 0 auto 2rem;
+  color: #ffffff;
 }
 
 .home-button {
+  display: inline-block;
   background-color: #56918c;
   color: #ffffff;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
@@ -63,40 +68,66 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: -10rem;
+  margin-top: -6rem;
 }
 
 .about-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
   margin-bottom: 1rem;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .about-description {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   max-width: 700px;
   line-height: 1.7;
   margin-bottom: 3rem;
-  color:#ffffff;
+  color: #ffffff;
 }
 
-/* Responsive */
+/* Responsive — Tablet & Below */
 @media (max-width: 768px) {
-  .home-title {
-    font-size: 2.5rem;
+  .home-hero,
+  .about-section {
+    padding: 8% 5%;
   }
 
-  .home-subtitle {
-    font-size: 1.5rem;
+  .home-title {
+    margin-top: -10rem;
   }
 
   .home-description,
   .about-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
-  .about-title {
-    font-size: 2.2rem;
+  .home-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive — Small Phones */
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .home-description,
+  .about-description {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .home-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }
