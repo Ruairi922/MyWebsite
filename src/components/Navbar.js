@@ -1,24 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = ({ toggleTerminal }) => {
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Ruairi Mulhall</Link>
+        <Link to="/" onClick={closeMenu}>Ruairi Mulhall</Link>
       </div>
-      <ul className="navbar-links">
-        <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Home</Link></li>
-        <li className={location.pathname === '/projects' ? 'active' : ''}><Link to="/projects">Projects</Link></li>
-        <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact">Contact</Link></li>
+
+      {/* 🍔 Burger Icon */}
+      <div className={`burger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      {/* 🌐 Nav Links */}
+      <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+        <li className={location.pathname === '/' ? 'active' : ''}>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+        </li>
+        <li className={location.pathname === '/projects' ? 'active' : ''}>
+          <Link to="/projects" onClick={closeMenu}>Projects</Link>
+        </li>
+        <li className={location.pathname === '/contact' ? 'active' : ''}>
+          <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        </li>
+
+        {/* Terminal button (mobile only) */}
+        {menuOpen && (
+          <li className="mobile-only">
+            <button className="terminal-button" onClick={() => { toggleTerminal(); closeMenu(); }}>
+              ⌨ Terminal
+            </button>
+          </li>
+        )}
       </ul>
 
-      {/* ✅ Terminal Toggle Button */}
+      {/* 🖥 Desktop Terminal Button */}
       <button
-        className="terminal-button"
+        className="terminal-button desktop-only"
         onClick={toggleTerminal}
       >
         ⌨ Terminal

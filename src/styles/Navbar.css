@@ -94,34 +94,84 @@
 /* ======================= */
 /* 📱 Mobile Responsiveness */
 /* ======================= */
+/* General navbar styles remain unchanged above this point */
+
+/* Burger Menu Icon */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger div {
+  height: 3px;
+  background-color: #56918c;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Active burger animation */
+.burger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Dropdown Menu */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 6%;
+  .burger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 10%;
   }
 
   .navbar-links {
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-top: 12px;
+    position: absolute;
+    top: 100%;
+    right: 0;
     width: 100%;
+    flex-direction: column;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(53, 154, 255, 0.1);
+    padding: 16px 10%;
+    gap: 1.2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
   }
 
-  .navbar-links li a {
-    font-size: 1rem;
-    padding-left: 4px;
+  .navbar-links.open {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: all;
   }
 
   .terminal-button {
     width: 100%;
-    margin: 12px 0 0 0;
-    padding: 10px;
-    text-align: center;
+    margin-top: 10px;
   }
 }
 
-/* XS Screens */
 @media (max-width: 420px) {
   .navbar-logo a {
     font-size: 1.4rem;
@@ -130,10 +180,6 @@
   .terminal-button {
     font-size: 0.95rem;
     padding: 10px 12px;
-  }
-
-  .navbar-links {
-    gap: 1rem;
   }
 
   .navbar-links li a {
