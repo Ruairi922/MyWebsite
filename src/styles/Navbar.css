@@ -1,3 +1,6 @@
+/* ======================= */
+/* 🌐 Core Navbar Styles   */
+/* ======================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -13,7 +16,6 @@
   transition: all 0.3s ease;
 }
 
-/* Logo */
 .navbar-logo a {
   color: #56918c;
   font-size: clamp(1.4rem, 3vw, 1.8rem);
@@ -27,7 +29,9 @@
   color: #406a66;
 }
 
-/* Nav Links */
+/* ======================= */
+/* 🧭 Nav Links (Desktop)  */
+/* ======================= */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -45,7 +49,6 @@
   transition: color 0.3s ease;
 }
 
-/* Hover underline */
 .navbar-links li a::after {
   content: "";
   position: absolute;
@@ -65,7 +68,6 @@
   width: 100%;
 }
 
-/* Active link */
 .navbar-links li.active a {
   color: #56918c;
 }
@@ -74,29 +76,14 @@
   width: 100%;
 }
 
-/* Terminal Button */
+/* Hide terminal button from desktop navbar by default */
 .terminal-button {
-  background-color: #359aff;
-  color: #000000;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: auto;
-}
-
-.terminal-button:hover {
-  background-color: #5bbcff;
+  display: none;
 }
 
 /* ======================= */
 /* 📱 Mobile Responsiveness */
 /* ======================= */
-/* General navbar styles remain unchanged above this point */
-
-/* Burger Menu Icon */
 .burger {
   display: none;
   flex-direction: column;
@@ -114,24 +101,14 @@
   transition: all 0.3s ease;
 }
 
-/* Active burger animation */
 .burger.open div:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .burger.open div:nth-child(2) {
   opacity: 0;
 }
-
 .burger.open div:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile Dropdown Menu */
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -145,7 +122,7 @@
   .navbar-links {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     width: 100%;
     flex-direction: column;
     background: rgba(18, 18, 18, 0.98);
@@ -166,9 +143,24 @@
     pointer-events: all;
   }
 
-  .terminal-button {
+  /* Show terminal button ONLY in mobile dropdown */
+  .navbar-links .terminal-button {
+    display: block;
     width: 100%;
     margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 14px;
+    background-color: #359aff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-links .terminal-button:hover {
+    background-color: #5bbcff;
   }
 }
 
@@ -177,12 +169,12 @@
     font-size: 1.4rem;
   }
 
-  .terminal-button {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
-
   .navbar-links li a {
     font-size: 0.95rem;
+  }
+
+  .navbar-links .terminal-button {
+    font-size: 0.95rem;
+    padding: 10px 12px;
   }
 }
