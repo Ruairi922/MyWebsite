@@ -1,10 +1,18 @@
 // Contact.js
 import React from 'react';
+import { motion } from 'framer-motion';
 import '../styles/Contact.css';
 
 const Contact = () => {
   return (
-    <div className="contact-section" id="contact">
+    <motion.section
+      className="contact-section"
+      id="contact"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <h2 className="contact-title">Let's Connect</h2>
       <p className="contact-subtitle">
         Whether it's for freelance work, internships, or collaboration—drop me a message.
@@ -17,11 +25,11 @@ const Contact = () => {
         <a href="https://www.linkedin.com/in/ruairi-mulhall-815935284/" target="_blank" rel="noreferrer">
           🔗 LinkedIn Profile
         </a>
-        <a href="/CV.pdf" target="_blank" rel="noreferrer">
+        <a href="/CV.pdf" download="Ruairi_Mulhall_CV.pdf" target="_blank" rel="noreferrer">
           📄 Download CV
         </a>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

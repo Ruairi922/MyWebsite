@@ -33,6 +33,9 @@ const Navbar = ({ toggleTerminal }) => {
         <li className={location.pathname === '/contact' ? 'active' : ''}>
           <Link to="/contact" onClick={closeMenu}>Contact</Link>
         </li>
+        <li className={location.pathname === '/about' ? 'active' : ''}>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+        </li>
 
         {/* Terminal button (mobile only) */}
         {menuOpen && (
