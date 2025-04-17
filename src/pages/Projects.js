@@ -11,14 +11,14 @@ const projects = [
     link: "#",
     github: "#"
   },
-  {
+  /**{
     title: "MobileSaunas.ie",
     timeline: "Mar – Apr 2025",
     description: "Freelance web project for a cold therapy business. Implemented full booking system with REST APIs, PostgreSQL, secure admin tools, and mobile-first UI design.",
     tech: ["PostgreSQL", "Express", "React", "Node.js"],
     link: "#",
     github: "#"
-  }
+  }*/
 ];
 
 const Projects = () => {
