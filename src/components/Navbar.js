@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = ({ toggleTerminal }) => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+  // Detect screen size to conditionally render terminal button
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -37,9 +48,9 @@ const Navbar = ({ toggleTerminal }) => {
           <Link to="/about" onClick={closeMenu}>About</Link>
         </li>
 
-        {/* Terminal button (mobile only) */}
-        {menuOpen && (
-          <li className="mobile-only">
+        {/* ⌨ Terminal button (inside nav list, only for desktop) */}
+        {menuOpen && isDesktop && (
+          <li>
             <button className="terminal-button" onClick={() => { toggleTerminal(); closeMenu(); }}>
               ⌨ Terminal
             </button>
@@ -47,13 +58,12 @@ const Navbar = ({ toggleTerminal }) => {
         )}
       </ul>
 
-      {/* 🖥 Desktop Terminal Button */}
-      <button
-        className="terminal-button desktop-only"
-        onClick={toggleTerminal}
-      >
-        ⌨ Terminal
-      </button>
+      {/* 🖥 Terminal button (outside menu, always visible on desktop) */}
+      {isDesktop && (
+        <button className="terminal-button desktop-only" onClick={toggleTerminal}>
+          ⌨ Terminal
+        </button>
+      )}
     </nav>
   );
 };
