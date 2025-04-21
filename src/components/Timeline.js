@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const timelineData = [
   {
     year: "2022",
-    text: "Graduated from St. Paul's Secondary School in Monasterevin and prepared to pursue Computer Science at university."
+    text: "Graduated from St. Paul's Secondary School in Monasterevin."
   },
   {
     year: "2023",
@@ -21,7 +21,7 @@ const timelineData = [
   },
   {
     year: "2025",
-    text: "Built and deployed MobileSaunas.ie — a full-stack booking system for a local cold therapy business using the PERN stack. Currently expanding it with new features and better UI."
+    text: "Built and deployed web application — a full-stack booking system for a local cold therapy business using the PERN stack. Currently expanding it with new features and better UI."
   },
   {
     year: "2027 (Expected)",

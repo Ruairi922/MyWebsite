@@ -16,10 +16,12 @@ const About = () => {
       >
         <h1 className="about-title">About Me</h1>
         <p className="about-description">
-          I'm Ruairi Mulhall — a second-year Computer Science student passionate about building robust, functional software.  
-          My focus is on clean full-stack web development, with an eye for design and user experience.
-          I have over 4 years of experience in Java, and I am currently expanding my skills in the PERN stack (PostgreSQL, Express, React, Node.js).
+          I'm Ruairi Mulhall — a second-year Computer Science student with a passion for building robust, scalable software.  
+          I have over 4 years of experience working with Java, and I'm currently developing skills in the PERN stack (PostgreSQL, Express, React, Node.js).  
+          While I have hands-on experience in full-stack web development and a strong appreciation for design and user experience, I'm still exploring where I want to specialize within the broader field of software engineering.  
+          I’m driven by clean code, modular architecture, and solving real-world problems with thoughtful, maintainable solutions.
         </p>
+
 
         <p className="about-description">
           I thrive in collaborative environments and enjoy tackling complex challenges.
