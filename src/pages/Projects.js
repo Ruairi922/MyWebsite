@@ -6,9 +6,10 @@ const projects = [
   {
     title: "Subtitle Translator App",
     timeline: "Feb – May 2025",
-    description: "Built under Microsoft mentorship using React, Node.js, Azure Blob Storage, and Azure AI Translation. Features secure file upload, multi-language subtitle translation, and editable previews with export to PDF/DOCX.",
+    description: "Developed under Microsoft mentorship using React, Node.js, Azure Blob Storage, and Azure AI Translation services. Enables secure subtitle file uploads, AI-powered multi-language translations, and format conversion to industry-standard subtitle types such as .srt and .vtt.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Azure AI", "OAuth2", "JWT"],
-    link: "https://maynoothmssubtitletranslator-dzhbg2a6brdvh8ew.uksouth-01.azurewebsites.net",
+    link: null,
+    //link: "https://maynoothmssubtitletranslator-dzhbg2a6brdvh8ew.uksouth-01.azurewebsites.net",
     github: null
   },
   {
