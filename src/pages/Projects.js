@@ -4,12 +4,19 @@ import '../styles/Projects.css';
 
 const projects = [
   {
+    title: "MobileSaunas.ie",
+    timeline: "Mar – Apr 2025",
+    description: "Freelance web project for a cold therapy business. Implemented full booking system with REST APIs, PostgreSQL, secure admin tools, and mobile-first UI design.",
+    tech: ["PostgreSQL", "Express", "React", "Node.js"],
+    link: "https://mobilesaunas.ie",  // Live link added here
+    github: null
+  },
+  {
     title: "Subtitle Translator App",
     timeline: "Feb – May 2025",
     description: "Developed under Microsoft mentorship using React, Node.js, Azure Blob Storage, and Azure AI Translation services. Enables secure subtitle file uploads, AI-powered multi-language translations, and format conversion to industry-standard subtitle types such as .srt and .vtt.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Azure AI", "OAuth2", "JWT"],
-    link: null,
-    //link: "https://maynoothmssubtitletranslator-dzhbg2a6brdvh8ew.uksouth-01.azurewebsites.net",
+    link: "https://maynoothmssubtitletranslator-dzhbg2a6brdvh8ew.uksouth-01.azurewebsites.net",
     github: null
   },
   {
@@ -28,15 +35,9 @@ const projects = [
     link: null,
     github: "https://github.com/Ruairi922/Virtual-Garden-Processing"
   }
-  /**{
-    title: "MobileSaunas.ie",
-    timeline: "Mar – Apr 2025",
-    description: "Freelance web project for a cold therapy business. Implemented full booking system with REST APIs, PostgreSQL, secure admin tools, and mobile-first UI design.",
-    tech: ["PostgreSQL", "Express", "React", "Node.js"],
-    link: "#",
-    github: "#"
-  }*/
 ];
+
+
 
 
 const Projects = () => {
