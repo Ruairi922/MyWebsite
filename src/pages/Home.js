@@ -15,15 +15,15 @@ const Home = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="home-title">Hi, I'm Ruairi Mulhall.</h1>
-        <h2 className="home-subtitle">
-          I design and build modular, scalable software.
-        </h2>
+        <h2 className="home-subtitle">Computer Science student & software developer.</h2>
         <p className="home-description">
-          I'm a second-year Computer Science student at Maynooth University with strong skills in Java and Python, and hands-on experience in full-stack web development. Whether it's building web apps, backend services, or general-purpose software, I focus on clean architecture and precise, modular design practices that scale.
+          I'm in my third year at Maynooth University. I work mainly with Java and Python, 
+          and have built real projects using the PERN stack. I'm interested in backend 
+          systems, AI, and security, with a focus on building software that's fast, clean, 
+          and reliable.
         </p>
         <Link to="/projects" className="home-button">View My Work</Link>
       </motion.section>
-
     </div>
   );
 };

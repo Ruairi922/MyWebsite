@@ -16,8 +16,8 @@ const projects = [
     timeline: "Feb – May 2025",
     description: "Developed under Microsoft mentorship using React, Node.js, Azure Blob Storage, and Azure AI Translation services. Enables secure subtitle file uploads, AI-powered multi-language translations, and format conversion to industry-standard subtitle types such as .srt and .vtt.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Azure AI", "OAuth2", "JWT"],
-    link: "https://maynoothmssubtitletranslator-dzhbg2a6brdvh8ew.uksouth-01.azurewebsites.net",
-    github: null
+    link: null,
+    github: "https://github.com/Shelja-Pugaliya/subtitle-translator"
   },
   {
     title: "Cosmic Revival",
