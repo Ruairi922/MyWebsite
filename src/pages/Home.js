@@ -23,6 +23,15 @@ const Home = () => {
           and reliable.
         </p>
         <Link to="/projects" className="home-button">View My Work</Link>
+        <a 
+          href="https://www.linkedin.com/in/ruairimulhall/" 
+          className="home-button" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          My LinkedIn Profile
+        </a>
+
       </motion.section>
     </div>
   );
